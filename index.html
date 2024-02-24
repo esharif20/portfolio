@@ -241,6 +241,39 @@
             </div>
         </div>
     </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const projects = document.querySelectorAll('.project');
+    
+        projects.forEach(project => {
+            project.addEventListener('click', function(event) {
+                // Prevent the event from propagating further
+                event.stopPropagation();
+
+                if (this.classList.contains('touch-enabled')) {
+                    this.classList.remove('touch-enabled');
+                    return; // Exit the function early
+                }
+                projects.forEach(p => p.classList.remove('touch-enabled'));
+    
+                this.classList.add('touch-enabled');
+            });
+        });
+    
+
+        document.body.addEventListener('click', function() {
+            projects.forEach(p => p.classList.remove('touch-enabled'));
+        }, true); 
+    });
+    
+    
+    
+    document.querySelectorAll('.project *').forEach(child => {
+        child.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    });
+</script>
 </body>
 
 </html>
