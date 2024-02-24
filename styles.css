@@ -390,24 +390,18 @@ main {
     transform: translateY(-50%);
 }
 
-@media (hover: none) and (pointer: coarse) {
-  /* Styles for touch screen devices */
-  .project:active .project__wrapper:before,
-  .project:focus .project__wrapper:before {
+.touch-enabled .project__wrapper:before {
     opacity: 0.7;
-  }
+}
 
-  .project:active .project__img,
-  .project:focus .project__img {
+.touch-enabled .project__img {
     transform: scale(1.03);
     filter: blur(5px);
-  }
+}
 
-  .project:active .project__description,
-  .project:focus .project__description {
+.touch-enabled .project__description {
     opacity: 1;
     transform: translateY(-50%);
-  }
 }
 
 
